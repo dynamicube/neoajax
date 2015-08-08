@@ -2,7 +2,7 @@
  *
  */
 
-function getFormValues(formId){ return $("#"+formId).serialize();}
+function getFormValues(formId){var myform = $("#"+formId);var disabled = myform.find(':input:disabled').removeAttr('disabled');var serialized = myform.serialize();disabled.attr('disabled','disabled');return serialized;}
 function neoAjax__A(str){ alert(str);}
 function neoAjax__R(forceGet){ location.reload(forceGet); }
 function neoajax(url,data){
